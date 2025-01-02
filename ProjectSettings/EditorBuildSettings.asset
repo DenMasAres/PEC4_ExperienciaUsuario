@@ -8,4 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/The_Viking_Village.unity
     guid: 00000000000000000000000000000000
-  m_configObjects: {}
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b4bd74807a4a5044d8f1b4b516b2703d,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: b50a85183ef642a4f828816d3e23d6bc,
+      type: 2}
