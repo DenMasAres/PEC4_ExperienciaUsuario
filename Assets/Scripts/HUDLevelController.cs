@@ -11,37 +11,45 @@ public class HUDLevelController : MonoBehaviour
 	private int currentBSOVolume = 10;
 	private int currentSFXVolume = 10;
 
+    private void Update()
+    {
+
+		if(Input.GetKeyDown(KeyCode.P))
+		//print(Mathf.Log10(1) * 20);
+		audioMixer.SetFloat("Volume", Mathf.Log10(0.1f) * 20);
+	}
+
 
     #region - AudioMixerController -
 
     public void IncreaseMasterVolume()
 	{
-
+		if (currentMasterVolume < 10) currentMasterVolume ++ ;
 	}
 
 	public void DecreaseMasterVolume()
 	{
-
+		if (currentMasterVolume > 0) currentMasterVolume -- ;
 	}
 
 	public void IncreaseBSOVolume()
 	{
-
+		if (currentBSOVolume < 10) currentBSOVolume++;
 	}
 
 	public void DecreaseBSOVolume()
 	{
-
+		if (currentBSOVolume > 0) currentBSOVolume--;
 	}
 
 	public void IncreaseSFXVolume()
 	{
-
+		if (currentSFXVolume < 10) currentSFXVolume++;
 	}
 
 	public void DecreaseSFXVolume()
 	{
-
+		if (currentSFXVolume > 0) currentSFXVolume--;
 	}
 
 
