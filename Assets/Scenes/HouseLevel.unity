@@ -1443,7 +1443,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 162156198}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1777085987}
+        m_TargetAssemblyTypeName: HUDLevelController, Assembly-CSharp
+        m_MethodName: DecreaseBSOVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &162156198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1610,9 +1622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '20
-
-'
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b3688b6a6af3a945b1cfb54699fd565, type: 2}
   m_sharedMaterial: {fileID: 147586534118642444, guid: 3b3688b6a6af3a945b1cfb54699fd565,
@@ -5333,7 +5343,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 658457028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1777085987}
+        m_TargetAssemblyTypeName: HUDLevelController, Assembly-CSharp
+        m_MethodName: IncreaseSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &658457028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5453,7 +5475,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 676307042}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1777085987}
+        m_TargetAssemblyTypeName: HUDLevelController, Assembly-CSharp
+        m_MethodName: IncreaseMasterVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &676307042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8065,7 +8099,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1108236392}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1777085987}
+        m_TargetAssemblyTypeName: HUDLevelController, Assembly-CSharp
+        m_MethodName: IncreaseBSOVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1108236392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8861,7 +8907,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1179014630}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1777085987}
+        m_TargetAssemblyTypeName: HUDLevelController, Assembly-CSharp
+        m_MethodName: DecreaseSFXVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1179014630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12022,9 +12080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '20
-
-'
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b3688b6a6af3a945b1cfb54699fd565, type: 2}
   m_sharedMaterial: {fileID: 147586534118642444, guid: 3b3688b6a6af3a945b1cfb54699fd565,
@@ -12443,7 +12499,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1705953272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1777085987}
+        m_TargetAssemblyTypeName: HUDLevelController, Assembly-CSharp
+        m_MethodName: DecreaseMasterVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1705953272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12780,6 +12848,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: ced9306fe8f779e46bb1522488c10a2f, type: 2}
+  masterVolumeText: {fileID: 2070053892}
+  BSOVolumeText: {fileID: 1678837359}
+  SFXVolumeText: {fileID: 170546831}
+  playerSpeedText: {fileID: 0}
+  playerRotationText: {fileID: 0}
 --- !u!4 &1777085988
 Transform:
   m_ObjectHideFlags: 0
@@ -14305,9 +14378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '20
-
-'
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b3688b6a6af3a945b1cfb54699fd565, type: 2}
   m_sharedMaterial: {fileID: 147586534118642444, guid: 3b3688b6a6af3a945b1cfb54699fd565,
