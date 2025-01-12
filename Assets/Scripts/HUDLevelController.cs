@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HUDLevelController : MonoBehaviour
 {
@@ -19,8 +20,20 @@ public class HUDLevelController : MonoBehaviour
 	[Header("PlayerStats")]
     [SerializeField] private TextMeshProUGUI playerSpeedText;
     [SerializeField] private TextMeshProUGUI playerRotationText;
+	[SerializeField] private ContinuousMoveProviderBase moveProvider;
+	[SerializeField] private ContinuousTurnProviderBase turnProvider;
+	private int currentPlayerMoveSpeed = 3;
+	private int currentPlayerRotationSpeed = 60;
+
+    [Header("Credits")]
+    [SerializeField] private Animator textAnimator;
 
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        PlayCredits();
+    }
 
     #region - AudioMixerController -
 
@@ -30,6 +43,7 @@ public class HUDLevelController : MonoBehaviour
 		{
 			currentMasterVolume++;
             audioMixer.SetFloat("MasterVolume",  GetValue(currentMasterVolume));
+            masterVolumeText.text = currentMasterVolume.ToString();
         }
 
 	}
@@ -40,8 +54,9 @@ public class HUDLevelController : MonoBehaviour
 		{
 			currentMasterVolume--;
             audioMixer.SetFloat("MasterVolume", GetValue(currentMasterVolume));
+            masterVolumeText.text = currentMasterVolume.ToString();
         }
-	}
+    }
 
 	public void IncreaseBSOVolume()
 	{
@@ -49,6 +64,7 @@ public class HUDLevelController : MonoBehaviour
 		{
 			currentBSOVolume++;
             audioMixer.SetFloat("BSOVolume", GetValue(currentBSOVolume));
+            BSOVolumeText.text = currentBSOVolume.ToString();
         }
 	}
 
@@ -58,6 +74,7 @@ public class HUDLevelController : MonoBehaviour
 		{
 			currentBSOVolume--;
             audioMixer.SetFloat("BSOVolume", GetValue(currentBSOVolume));
+            BSOVolumeText.text = currentBSOVolume.ToString();
         }
 	}
 
@@ -67,6 +84,7 @@ public class HUDLevelController : MonoBehaviour
 		{
 			currentSFXVolume++;
             audioMixer.SetFloat("SFXVolume", GetValue(currentBSOVolume));
+            SFXVolumeText.text = currentSFXVolume.ToString();
         }
 	}
 
@@ -76,6 +94,7 @@ public class HUDLevelController : MonoBehaviour
 		{
 			currentSFXVolume--;
             audioMixer.SetFloat("SFXVolume", GetValue(currentBSOVolume));
+            SFXVolumeText.text = currentSFXVolume.ToString();
         }
 	}
 
@@ -97,29 +116,50 @@ public class HUDLevelController : MonoBehaviour
 
     public void IncreasePlayerSpeed()
 	{
+		if(currentPlayerMoveSpeed < 20f)
+		{
+			currentPlayerMoveSpeed++;
+            moveProvider.moveSpeed = currentPlayerMoveSpeed;
+            playerSpeedText.text = currentPlayerMoveSpeed.ToString();	
 
-	}
+        }
+    }
 
     public void DecreasePlayerSpeed()
     {
-
+        if (currentPlayerMoveSpeed > 1f)
+        {
+            currentPlayerMoveSpeed--;
+            moveProvider.moveSpeed = currentPlayerMoveSpeed;
+            playerSpeedText.text = currentPlayerMoveSpeed.ToString();
+        }
     }
 
 	public void IncreasePlayerRotationSpeed()
 	{
-
-	}
+        if(currentPlayerRotationSpeed < 100f)
+        {
+            currentPlayerRotationSpeed++;
+            turnProvider.turnSpeed = currentPlayerRotationSpeed;
+            playerRotationText.text = currentPlayerRotationSpeed.ToString();
+        }
+    }
 
     public void DecreasePlayerRotationSpeed()
     {
-
+        if (currentPlayerRotationSpeed > 10f)
+        {
+            currentPlayerRotationSpeed--;
+            turnProvider.turnSpeed = currentPlayerRotationSpeed;
+            playerRotationText.text = currentPlayerRotationSpeed.ToString();
+        }
     }
 
     #endregion
 
     public void PlayCredits()
     {
-
+        textAnimator.SetTrigger("StartAnimation");
     }
 
 
