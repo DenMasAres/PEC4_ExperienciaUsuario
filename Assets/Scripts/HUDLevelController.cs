@@ -13,6 +13,8 @@ public class HUDLevelController : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI masterVolumeText;
 	[SerializeField] private TextMeshProUGUI BSOVolumeText;
 	[SerializeField] private TextMeshProUGUI SFXVolumeText;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip sfzClip;
     private int currentMasterVolume = 10;
 	private int currentBSOVolume = 10;
 	private int currentSFXVolume = 10;
@@ -27,13 +29,6 @@ public class HUDLevelController : MonoBehaviour
 
     [Header("Credits")]
     [SerializeField] private Animator textAnimator;
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        PlayCredits();
-    }
 
     #region - AudioMixerController -
 
@@ -83,7 +78,7 @@ public class HUDLevelController : MonoBehaviour
 		if (currentSFXVolume < 10)
 		{
 			currentSFXVolume++;
-            audioMixer.SetFloat("SFXVolume", GetValue(currentBSOVolume));
+            audioMixer.SetFloat("SFXVolume", GetValue(currentSFXVolume));
             SFXVolumeText.text = currentSFXVolume.ToString();
         }
 	}
@@ -93,7 +88,7 @@ public class HUDLevelController : MonoBehaviour
 		if (currentSFXVolume > 0)
 		{
 			currentSFXVolume--;
-            audioMixer.SetFloat("SFXVolume", GetValue(currentBSOVolume));
+            audioMixer.SetFloat("SFXVolume", GetValue(currentSFXVolume));
             SFXVolumeText.text = currentSFXVolume.ToString();
         }
 	}
@@ -160,6 +155,11 @@ public class HUDLevelController : MonoBehaviour
     public void PlayCredits()
     {
         textAnimator.SetTrigger("StartAnimation");
+    }
+
+    public void PlaySFXSound()
+    {
+        sfxSource.PlayOneShot(sfzClip);
     }
 
 
